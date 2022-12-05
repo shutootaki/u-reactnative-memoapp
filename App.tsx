@@ -1,10 +1,11 @@
-/* eslint-disable react/style-prop-object */
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { Hello } from './src/components/Hello';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Hello />
       <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
