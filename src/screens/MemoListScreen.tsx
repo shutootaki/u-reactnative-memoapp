@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Appbar } from '../components/Appbar';
 import { MemoList } from '../components/MemoList';
-import { CreateMemoButton } from '../components/CreateMemoButton';
+import { CircleButton } from '../components/CircleButton';
 
 const MemoListScreen = () => {
   return (
     <View style={styles.container}>
       <Appbar />
       <MemoList />
-      <CreateMemoButton children="+" />
+      <CircleButton children="+" />
     </View>
   );
 };

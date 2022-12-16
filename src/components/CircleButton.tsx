@@ -5,7 +5,7 @@ type Props = {
   children: string;
 };
 
-export const CreateMemoButton: React.FC<Props> = ({ children = '+' }) => {
+export const CircleButton: React.FC<Props> = ({ children = '+' }) => {
   return (
     <View style={styels.createMemoButton}>
       <Text style={styels.createMemoButtonText}>{children}</Text>
