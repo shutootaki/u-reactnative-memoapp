@@ -1,10 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export const CreateMemoButton = () => {
+type Props = {
+  children: string;
+};
+
+export const CreateMemoButton: React.FC<Props> = ({ children = '+' }) => {
   return (
     <View style={styels.createMemoButton}>
-      <Text style={styels.createMemoButtonText}>+</Text>
+      <Text style={styels.createMemoButtonText}>{children}</Text>
     </View>
   );
 };
