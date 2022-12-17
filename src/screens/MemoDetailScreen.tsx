@@ -3,7 +3,7 @@ import { Appbar } from '../components/Appbar';
 import { StyleSheet, View } from 'react-native';
 import MemoTitle from '../components/MemoTitle';
 import { MemoBody } from '../components/MemoBody';
-import { CircleButton } from '../components/CircleButton';
+import { CircleButton } from '../components/atoms/CircleButton';
 import Icon2 from 'react-native-vector-icons/Feather';
 
 const MemoDetailScreen = () => {

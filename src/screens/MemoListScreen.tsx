@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Appbar } from '../components/Appbar';
 import { MemoList } from '../components/MemoList';
-import { CircleButton } from '../components/CircleButton';
+import { CircleButton } from '../components/atoms/CircleButton';
 
 const MemoListScreen = () => {
   return (
