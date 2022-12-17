@@ -8,8 +8,8 @@ const MemoListScreen = () => {
   return (
     <View style={styles.container}>
       <Appbar />
-      <MemoList />
-      <CircleButton children="+" />
+      <MemoList name="x" />
+      <CircleButton name="plus" />
     </View>
   );
 };

@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import MemoTitle from '../components/MemoTitle';
 import { MemoBody } from '../components/MemoBody';
 import { CircleButton } from '../components/CircleButton';
+import Icon2 from 'react-native-vector-icons/Feather';
 
 const MemoDetailScreen = () => {
   return (
@@ -12,11 +13,10 @@ const MemoDetailScreen = () => {
       <MemoTitle />
       <MemoBody />
       <CircleButton
+        name="edit-2"
         buttonStyle={{ top: 148, width: 40, height: 40, backgroundColor: '#7ca8eb' }}
-        buttonTextStyle={{ fontSize: 32, marginTop: 0 }}
-      >
-        +
-      </CircleButton>
+        buttonTextStyle={{ fontSize: 24, marginTop: 8 }}
+      />
     </View>
   );
 };

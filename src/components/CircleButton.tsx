@@ -1,16 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Icon2 from 'react-native-vector-icons/Feather';
 
 type Props = {
-  children: string;
+  name: string;
   buttonStyle?: {};
   buttonTextStyle?: {};
 };
 
-export const CircleButton: React.FC<Props> = ({ children, buttonStyle = {}, buttonTextStyle = {} }) => {
+export const CircleButton: React.FC<Props> = ({ name, buttonStyle = {}, buttonTextStyle = {} }) => {
   return (
     <View style={[styels.circleButton, buttonStyle]}>
-      <Text style={[styels.circleButtonText, buttonTextStyle]}>{children}</Text>
+      <Icon2 name={name} style={[styels.circleButtonText, buttonTextStyle]} />
     </View>
   );
 };
@@ -34,6 +35,6 @@ const styels = StyleSheet.create({
   circleButtonText: {
     color: '#ffffff',
     fontSize: 40,
-    marginTop: 4
+    marginTop: 10
   }
 });

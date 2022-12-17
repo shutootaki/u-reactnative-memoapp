@@ -1,7 +1,11 @@
 import React, { Suspense } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Icon2 from 'react-native-vector-icons/Feather';
 
-export const MemoList = () => {
+type Props = {
+  name: string;
+};
+export const MemoList: React.FC<Props> = ({ name }) => {
   return (
     <Suspense>
       <View style={styles.memoListItem}>
@@ -10,7 +14,7 @@ export const MemoList = () => {
           <Text style={styles.memoListItemDate}>2022年12月5日 10:00</Text>
         </View>
         <View>
-          <Text>✕</Text>
+          <Icon2 name={name} size={24} color="gray" />
         </View>
       </View>
       <View style={styles.memoListItem}>
@@ -19,7 +23,7 @@ export const MemoList = () => {
           <Text style={styles.memoListItemDate}>2022年12月5日 10:00</Text>
         </View>
         <View>
-          <Text>✕</Text>
+          <Icon2 name={name} size={24} color="gray" />
         </View>
       </View>
     </Suspense>
@@ -38,7 +42,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(0,0,0,0.15)'
   },
   memoListTitle: {
-    fontSize: 16,
+    fontSize: 18,
     lineHeight: 32
   },
   memoListItemDate: {
