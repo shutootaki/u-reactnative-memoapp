@@ -28,8 +28,8 @@ const styels = StyleSheet.create({
     right: 40,
     bottom: 40,
     shadowColor: '#0000000',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.25,
+    shadowOffset: { width: 8, height: 8 },
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     elevation: 8
   },

@@ -1,16 +1,18 @@
 import React from 'react';
-import { Appbar } from '../components/Appbar';
 import { CircleButton } from '../components/atoms/CircleButton';
 import { KeyboardAvoidingView, StyleSheet, View } from 'react-native';
 import EditMemo from '../components/EditMemo';
+import { TNav } from './Login';
 
-const MemoEditScreen = () => {
+const MemoEditScreen: React.FC<TNav> = ({ navigation }) => {
+  const onPress = () => {
+    navigation.goBack();
+  };
   return (
     <View style={styles.container}>
-      <Appbar />
       <KeyboardAvoidingView style={styles.textEditBody} behavior="height">
         <EditMemo />
-        <CircleButton name="check" onPress={() => {}} />
+        <CircleButton name="check" onPress={onPress} />
       </KeyboardAvoidingView>
     </View>
   );

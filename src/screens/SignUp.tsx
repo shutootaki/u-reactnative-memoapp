@@ -1,21 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { Appbar } from '../components/Appbar';
 import { SubmitButton } from '../components/atoms/SubmitButton';
+import { TNav } from './Login';
 
-const SignUp = () => {
+const SignUp: React.FC<TNav> = ({ navigation }) => {
+  const onPress = () => navigation.navigate('Login');
   return (
     <View>
-      <Appbar />
       <View style={styles.innrer}>
         <Text style={styles.title}>Sign Up</Text>
         <TextInput style={styles.input} value="email" />
         <TextInput style={styles.input} value="password" />
         <SubmitButton value="Submit" />
         <View style={styles.moveLogInContainer}>
-          <Text style={styles.moveLogInText}>Not register?</Text>
-          <TouchableOpacity onPress={() => {}}>
-            <Text style={styles.moveLogInText}>Sign Up here!!</Text>
+          <Text style={styles.moveLogInText}>Already Register?</Text>
+          <TouchableOpacity onPress={onPress}>
+            <Text style={styles.moveLogInText}>Log In!</Text>
           </TouchableOpacity>
         </View>
       </View>

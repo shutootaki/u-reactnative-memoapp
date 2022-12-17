@@ -1,22 +1,24 @@
 import React from 'react';
-import { Appbar } from '../components/Appbar';
 import { StyleSheet, View } from 'react-native';
 import MemoTitle from '../components/MemoTitle';
 import { MemoBody } from '../components/MemoBody';
 import { CircleButton } from '../components/atoms/CircleButton';
 import Icon2 from 'react-native-vector-icons/Feather';
+import { TNav } from './Login';
 
-const MemoDetailScreen = () => {
+const MemoDetailScreen: React.FC<TNav> = ({ navigation }) => {
+  const onPress = () => {
+    navigation.navigate('MemoEdit');
+  };
   return (
     <View style={styles.container}>
-      <Appbar />
       <MemoTitle />
       <MemoBody />
       <CircleButton
         name="edit-2"
-        buttonStyle={{ top: 148, width: 40, height: 40, backgroundColor: '#7ca8eb' }}
-        buttonTextStyle={{ fontSize: 24, marginTop: 8 }}
-        onPress={() => {}}
+        buttonStyle={{ top: 30, width: 40, height: 40, backgroundColor: '#7ca8eb' }}
+        buttonTextStyle={{ fontSize: 20, marginTop: 10 }}
+        onPress={onPress}
       />
     </View>
   );

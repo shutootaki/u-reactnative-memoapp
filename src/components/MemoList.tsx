@@ -1,10 +1,12 @@
 import React, { Suspense } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Icon2 from 'react-native-vector-icons/Feather';
+import { TNav } from '../screens/Login';
 
 type Props = {
   name: string;
 };
+
 export const MemoList: React.FC<Props> = ({ name }) => {
   return (
     <Suspense>
