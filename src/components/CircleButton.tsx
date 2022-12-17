@@ -3,18 +3,20 @@ import { StyleSheet, Text, View } from 'react-native';
 
 type Props = {
   children: string;
+  buttonStyle?: {};
+  buttonTextStyle?: {};
 };
 
-export const CircleButton: React.FC<Props> = ({ children = '+' }) => {
+export const CircleButton: React.FC<Props> = ({ children, buttonStyle = {}, buttonTextStyle = {} }) => {
   return (
-    <View style={styels.createMemoButton}>
-      <Text style={styels.createMemoButtonText}>{children}</Text>
+    <View style={[styels.circleButton, buttonStyle]}>
+      <Text style={[styels.circleButtonText, buttonTextStyle]}>{children}</Text>
     </View>
   );
 };
 
 const styels = StyleSheet.create({
-  createMemoButton: {
+  circleButton: {
     backgroundColor: '#467FD3',
     alignItems: 'center',
     width: 64,
@@ -29,7 +31,7 @@ const styels = StyleSheet.create({
     shadowRadius: 8,
     elevation: 8
   },
-  createMemoButtonText: {
+  circleButtonText: {
     color: '#ffffff',
     fontSize: 40,
     marginTop: 4

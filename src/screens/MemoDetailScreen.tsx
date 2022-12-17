@@ -11,7 +11,12 @@ const MemoDetailScreen = () => {
       <Appbar />
       <MemoTitle />
       <MemoBody />
-      {/* <CircleButton children="編集" /> */}
+      <CircleButton
+        buttonStyle={{ top: 148, width: 40, height: 40, backgroundColor: '#7ca8eb' }}
+        buttonTextStyle={{ fontSize: 32, marginTop: 0 }}
+      >
+        +
+      </CircleButton>
     </View>
   );
 };
