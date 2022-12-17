@@ -9,7 +9,7 @@ const MemoListScreen = () => {
     <View style={styles.container}>
       <Appbar />
       <MemoList name="x" />
-      <CircleButton name="plus" />
+      <CircleButton name="plus" onPress={() => {}} />
     </View>
   );
 };

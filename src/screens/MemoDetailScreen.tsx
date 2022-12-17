@@ -16,6 +16,7 @@ const MemoDetailScreen = () => {
         name="edit-2"
         buttonStyle={{ top: 148, width: 40, height: 40, backgroundColor: '#7ca8eb' }}
         buttonTextStyle={{ fontSize: 24, marginTop: 8 }}
+        onPress={() => {}}
       />
     </View>
   );

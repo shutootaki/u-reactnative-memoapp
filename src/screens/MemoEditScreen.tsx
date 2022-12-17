@@ -10,7 +10,7 @@ const MemoEditScreen = () => {
       <Appbar />
       <KeyboardAvoidingView style={styles.textEditBody} behavior="height">
         <EditMemo />
-        <CircleButton name="check" />
+        <CircleButton name="check" onPress={() => {}} />
       </KeyboardAvoidingView>
     </View>
   );
