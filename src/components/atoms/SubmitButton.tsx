@@ -1,15 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { TNav } from '../../screens/Login';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 type Props = {
   value: string;
+  onSubmit: () => void;
 };
 
-export const SubmitButton: React.FC<Props> = ({ value }) => {
+export const SubmitButton: React.FC<Props> = ({ value, onSubmit }) => {
   return (
-    <View style={styles.buttonContainer}>
+    <TouchableOpacity style={styles.buttonContainer} onPress={onSubmit}>
       <Text style={styles.buttonText}>{value}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

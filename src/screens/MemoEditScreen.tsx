@@ -12,7 +12,7 @@ const MemoEditScreen: React.FC<TNav> = ({ navigation }) => {
     <View style={styles.container}>
       <KeyboardAvoidingView style={styles.textEditBody} behavior="height">
         <EditMemo />
-        <CircleButton name="check" onPress={onPress} />
+        <CircleButton iconName="check" onPress={onPress} />
       </KeyboardAvoidingView>
     </View>
   );

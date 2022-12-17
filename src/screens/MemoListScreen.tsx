@@ -11,8 +11,8 @@ const MemoListScreen: React.FC<TNav> = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <MemoList name="x" />
-      <CircleButton name="plus" onPress={onPress} />
+      <MemoList iconName="x" />
+      <CircleButton iconName="plus" onPress={onPress} />
     </View>
   );
 };

@@ -3,16 +3,16 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon2 from 'react-native-vector-icons/Feather';
 
 type Props = {
-  name: string;
+  iconName: string;
   buttonStyle?: {};
   buttonTextStyle?: {};
   onPress: () => void;
 };
 
-export const CircleButton: React.FC<Props> = ({ name, buttonStyle = {}, buttonTextStyle = {}, onPress }) => {
+export const CircleButton: React.FC<Props> = ({ iconName, buttonStyle = {}, buttonTextStyle = {}, onPress }) => {
   return (
     <TouchableOpacity style={[styels.circleButton, buttonStyle]} onPress={onPress}>
-      <Icon2 name={name} style={[styels.circleButtonText, buttonTextStyle]} />
+      <Icon2 name={iconName} style={[styels.circleButtonText, buttonTextStyle]} />
     </TouchableOpacity>
   );
 };

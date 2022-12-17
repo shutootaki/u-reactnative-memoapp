@@ -10,6 +10,12 @@ const Login: React.FC<TNav> = ({ navigation }) => {
   const onPress = () => {
     navigation.navigate('SignUp');
   };
+  const onSubmit = () => {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'MemoList' }]
+    });
+  };
 
   return (
     <View>
@@ -17,7 +23,7 @@ const Login: React.FC<TNav> = ({ navigation }) => {
         <Text style={styles.title}>Log In</Text>
         <TextInput style={styles.input} value="email" />
         <TextInput style={styles.input} value="password" />
-        <SubmitButton value="Submit" />
+        <SubmitButton value="Submit" onSubmit={onSubmit} />
         <View style={styles.moveRegisterContainer}>
           <Text style={styles.moveRegisterText}>Not register?</Text>
           <TouchableOpacity onPress={onPress}>
@@ -36,7 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 32,
     fontWeight: 'bold',
-    paddingVertical: 16
+    paddingBottom: 16
   },
   input: {
     fontSize: 16,

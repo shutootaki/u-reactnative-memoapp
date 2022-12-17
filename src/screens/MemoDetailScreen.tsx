@@ -15,7 +15,7 @@ const MemoDetailScreen: React.FC<TNav> = ({ navigation }) => {
       <MemoTitle />
       <MemoBody />
       <CircleButton
-        name="edit-2"
+        iconName="edit-2"
         buttonStyle={{ top: 30, width: 40, height: 40, backgroundColor: '#7ca8eb' }}
         buttonTextStyle={{ fontSize: 20, marginTop: 10 }}
         onPress={onPress}
