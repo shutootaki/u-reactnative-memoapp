@@ -10,8 +10,10 @@ import Login from './src/screens/Login';
 import SignUp from './src/screens/SignUp';
 import { firebaseConfig } from './env';
 
-const Stack = createStackNavigator();
 firebase.initializeApp(firebaseConfig);
+require('firebase/firestore');
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (

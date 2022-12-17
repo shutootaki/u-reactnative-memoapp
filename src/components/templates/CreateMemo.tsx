@@ -1,8 +1,13 @@
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 
-const CreateMemo = () => {
-  return <TextInput style={styles.memoText} multiline></TextInput>;
+type Props = {
+  setMemoTitle?: React.Dispatch<React.SetStateAction<string>>;
+  setMemoBody: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const CreateMemo: React.FC<Props> = ({ setMemoBody }) => {
+  return <TextInput style={styles.memoText} onChangeText={(text) => setMemoBody(text)} multiline autoFocus></TextInput>;
 };
 
 const styles = StyleSheet.create({
