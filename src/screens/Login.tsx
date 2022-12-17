@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import firebase from 'firebase';
 
@@ -11,6 +11,16 @@ export type TNav = {
 const Login: React.FC<TNav> = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      user &&
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'MemoList' }]
+        });
+    });
+  }, []);
 
   const onPress = () => {
     navigation.navigate('SignUp');

@@ -11,7 +11,7 @@ import SignUp from './src/screens/SignUp';
 import { firebaseConfig } from './env';
 
 const Stack = createStackNavigator();
-firebase.app.length ?? firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 export default function App() {
   return (

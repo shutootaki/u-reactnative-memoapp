@@ -3,7 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import MemoTitle from '../components/templates/MemoTitle';
 import { MemoBody } from '../components/templates/MemoBody';
 import { CircleButton } from '../components/atoms/CircleButton';
-import Icon2 from 'react-native-vector-icons/Feather';
 import { TNav } from './Login';
 
 const MemoDetailScreen: React.FC<TNav> = ({ navigation }) => {
