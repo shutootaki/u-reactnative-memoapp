@@ -5,7 +5,7 @@ type Props = {
   value: string;
 };
 
-const Button: React.FC<Props> = ({ value }) => {
+export const SubmitButton: React.FC<Props> = ({ value }) => {
   return (
     <View style={styles.buttonContainer}>
       <Text style={styles.buttonText}>{value}</Text>
@@ -28,5 +28,3 @@ const styles = StyleSheet.create({
     fontSize: 16
   }
 });
-
-export default Button;

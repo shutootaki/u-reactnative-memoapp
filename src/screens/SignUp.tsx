@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { Appbar } from '../components/Appbar';
-import Button from '../components/atoms/Button';
+import { SubmitButton } from '../components/atoms/SubmitButton';
 
 const SignUp = () => {
   return (
@@ -11,7 +11,7 @@ const SignUp = () => {
         <Text style={styles.title}>Sign Up</Text>
         <TextInput style={styles.input} value="email" />
         <TextInput style={styles.input} value="password" />
-        <Button value="Submit" />
+        <SubmitButton value="Submit" />
         <View style={styles.moveLogInContainer}>
           <Text style={styles.moveLogInText}>Not register?</Text>
           <Text style={styles.moveLogInText}>Sign Up here!!</Text>
