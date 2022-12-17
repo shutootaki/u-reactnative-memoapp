@@ -1,16 +1,19 @@
-import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
+import firebase from 'firebase';
+
 import MemoListScreen from './src/screens/MemoListScreen';
 import MemoDetailScreen from './src/screens/MemoDetailScreen';
 import MemoEditScreen from './src/screens/MemoEditScreen';
 import MemoCreateScreen from './src/screens/MemoCreateScreen';
 import Login from './src/screens/Login';
 import SignUp from './src/screens/SignUp';
+import { firebaseConfig } from './env';
+
+const Stack = createStackNavigator();
+firebase.app.length ?? firebase.initializeApp(firebaseConfig);
 
 export default function App() {
-  const Stack = createStackNavigator();
-
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -27,15 +30,15 @@ export default function App() {
         }}
       >
         <Stack.Screen
-          name="Login"
-          component={Login}
+          name="SignUp"
+          component={SignUp}
           options={{
             cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid
           }}
         />
         <Stack.Screen
-          name="SignUp"
-          component={SignUp}
+          name="Login"
+          component={Login}
           options={{
             cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid
           }}

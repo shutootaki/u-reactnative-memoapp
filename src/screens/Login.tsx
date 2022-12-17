@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import firebase from 'firebase';
+
 import { SubmitButton } from '../components/atoms/SubmitButton';
 
 export type TNav = {
@@ -14,10 +16,18 @@ const Login: React.FC<TNav> = ({ navigation }) => {
     navigation.navigate('SignUp');
   };
   const onSubmit = () => {
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'MemoList' }]
-    });
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'MemoList' }]
+        });
+      })
+      .catch((error) => {
+        alert(`ログインに失敗しました${error.code}`);
+      });
   };
 
   return (

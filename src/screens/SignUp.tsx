@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import firebase from 'firebase';
+
 import { SubmitButton } from '../components/atoms/SubmitButton';
 import { TNav } from './Login';
 
@@ -7,11 +9,20 @@ const SignUp: React.FC<TNav> = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const onPress = () => navigation.navigate('Login');
+
   const onSubmit = () => {
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'MemoList' }]
-    });
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'MemoList' }]
+        });
+      })
+      .catch((error) => {
+        return alert(`サインアップに失敗しました${error.code}`);
+      });
   };
 
   return (
@@ -57,7 +68,6 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 16,
-    color: '#DDDDDD',
     backgroundColor: '#ffffff',
     borderColor: '#DDDDDD',
     borderWidth: 1,
