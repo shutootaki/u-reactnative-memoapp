@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SubmitButton } from '../components/atoms/SubmitButton';
 import { TNav } from './Login';
 
 const SignUp: React.FC<TNav> = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const onPress = () => navigation.navigate('Login');
   const onSubmit = () => {
     navigation.reset({
@@ -16,8 +18,22 @@ const SignUp: React.FC<TNav> = ({ navigation }) => {
     <View>
       <View style={styles.innrer}>
         <Text style={styles.title}>Sign Up</Text>
-        <TextInput style={styles.input} value="email" />
-        <TextInput style={styles.input} value="password" />
+        <TextInput
+          style={styles.input}
+          placeholder="email"
+          onChangeText={(text) => setEmail(text)}
+          value={email}
+          autoCapitalize="none"
+          keyboardType="email-address"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="password"
+          onChangeText={(text) => setPassword(text)}
+          value={password}
+          autoCapitalize="none"
+          secureTextEntry
+        />
         <SubmitButton value="Submit" onSubmit={onSubmit} />
         <View style={styles.moveLogInContainer}>
           <Text style={styles.moveLogInText}>Already Register?</Text>
