@@ -19,7 +19,7 @@ const Login: React.FC<TNav> = ({ navigation }) => {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
+      .then(() => {
         navigation.reset({
           index: 0,
           routes: [{ name: 'MemoList' }]

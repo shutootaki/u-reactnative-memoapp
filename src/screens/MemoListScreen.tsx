@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { MemoList } from '../components/MemoList';
+import { MemoList } from '../components/templates/MemoList';
 import { CircleButton } from '../components/atoms/CircleButton';
 import { TNav } from './Login';
 

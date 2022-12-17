@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import MemoTitle from '../components/MemoTitle';
-import { MemoBody } from '../components/MemoBody';
+import MemoTitle from '../components/templates/MemoTitle';
+import { MemoBody } from '../components/templates/MemoBody';
 import { CircleButton } from '../components/atoms/CircleButton';
 import Icon2 from 'react-native-vector-icons/Feather';
 import { TNav } from './Login';

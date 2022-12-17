@@ -1,14 +1,14 @@
 import React from 'react';
 import { CircleButton } from '../components/atoms/CircleButton';
 import { KeyboardAvoidingView, StyleSheet, View } from 'react-native';
-import CreateMemo from '../components/CreateMemo';
+import CreateMemo from '../components/templates/CreateMemo';
 
 const MemoCreateScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <KeyboardAvoidingView style={styles.textEditBody} behavior="height">
         <CreateMemo />
-        <CircleButton name="check" onPress={() => {}} />
+        <CircleButton iconName="check" onPress={() => {}} />
       </KeyboardAvoidingView>
     </View>
   );

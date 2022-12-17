@@ -1,7 +1,7 @@
 import React from 'react';
 import { CircleButton } from '../components/atoms/CircleButton';
 import { KeyboardAvoidingView, StyleSheet, View } from 'react-native';
-import EditMemo from '../components/EditMemo';
+import EditMemo from '../components/templates/EditMemo';
 import { TNav } from './Login';
 
 const MemoEditScreen: React.FC<TNav> = ({ navigation }) => {
