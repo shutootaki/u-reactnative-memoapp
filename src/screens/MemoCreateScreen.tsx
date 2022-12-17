@@ -2,14 +2,14 @@ import React from 'react';
 import { Appbar } from '../components/Appbar';
 import { CircleButton } from '../components/CircleButton';
 import { KeyboardAvoidingView, StyleSheet, View } from 'react-native';
-import EditMemo from '../components/EditMemo';
+import CreateMemo from '../components/CreateMemo';
 
-const MemoEditScreen = () => {
+const MemoCreateScreen = () => {
   return (
     <View style={styles.container}>
       <Appbar />
       <KeyboardAvoidingView style={styles.textEditBody} behavior="height">
-        <EditMemo />
+        <CreateMemo />
         <CircleButton name="check" />
       </KeyboardAvoidingView>
     </View>
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MemoEditScreen;
+export default MemoCreateScreen;
