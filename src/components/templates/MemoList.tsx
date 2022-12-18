@@ -5,6 +5,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { dateToString } from '../../utils/convertDate';
 import { MemoData } from '../../types/type';
+import { SubmitButton } from '../atoms/SubmitButton';
+import { MemoEmpty } from './MemoEmpty';
 
 type Props = {
   iconName: string;
@@ -33,6 +35,7 @@ export const MemoList: React.FC<Props> = ({ iconName, memos }) => {
     );
   };
 
+  if (memos.length === 0) return <MemoEmpty />;
   return (
     <Suspense>
       <FlatList data={memos} renderItem={renderItem} keyExtractor={(item) => item.id} />
