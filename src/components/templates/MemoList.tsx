@@ -3,8 +3,8 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 import Icon2 from 'react-native-vector-icons/Feather';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
-import { MemoData } from '../../screens/MemoListScreen';
 import { dateToString } from '../../utils/convertDate';
+import { MemoData } from '../../types/type';
 
 type Props = {
   iconName: string;

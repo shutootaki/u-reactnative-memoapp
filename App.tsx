@@ -9,7 +9,7 @@ import MemoCreateScreen from './src/screens/MemoCreateScreen';
 import Login from './src/screens/Login';
 import SignUp from './src/screens/SignUp';
 import { firebaseConfig } from './env';
-import { RootStackParamList } from './type';
+import { RootStackParamList } from './src/types/type';
 
 firebase.initializeApp(firebaseConfig);
 require('firebase/firestore');

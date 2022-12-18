@@ -3,9 +3,8 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 import firebase from 'firebase';
 
 import { SubmitButton } from '../components/atoms/SubmitButton';
-import { TNav } from './Login';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../type';
+import { RootStackParamList } from '../types/type';
 
 type ProfileScreenNavigationProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
 type Props = {

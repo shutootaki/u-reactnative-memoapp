@@ -4,11 +4,7 @@ import firebase from 'firebase';
 
 import { SubmitButton } from '../components/atoms/SubmitButton';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../type';
-
-export type TNav = {
-  navigation: any;
-};
+import { RootStackParamList } from '../types/type';
 
 type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Login'>;
 type Props = {

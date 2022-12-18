@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { MemoData } from '../../screens/MemoListScreen';
+
 import { dateToString } from '../../utils/convertDate';
+import { MemoData } from '../../types/type';
 
 type Props = {
   memoDetailData: MemoData | undefined;
@@ -13,7 +14,9 @@ const MemoTitle: React.FC<Props> = ({ memoDetailData }) => {
       <Text style={styles.memoTitle} numberOfLines={1}>
         {memoDetailData && memoDetailData.memoBody}
       </Text>
-      <Text style={styles.memoDate}>{memoDetailData && dateToString(memoDetailData.updatedAt)}</Text>
+      <Text style={styles.memoDate}>
+        {memoDetailData && memoDetailData.updatedAt && dateToString(memoDetailData.updatedAt)}
+      </Text>
     </View>
   );
 };

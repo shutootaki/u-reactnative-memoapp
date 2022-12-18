@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import firebase from 'firebase';
@@ -7,8 +7,7 @@ import MemoTitle from '../components/templates/MemoTitle';
 import { MemoBody } from '../components/templates/MemoBody';
 import { CircleButton } from '../components/atoms/CircleButton';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../type';
-import { MemoData } from './MemoListScreen';
+import { MemoData, RootStackParamList } from '../types/type';
 
 type MemoDetailScreenNavigationProp = StackNavigationProp<RootStackParamList, 'MemoDetail'>;
 type MemoDetailScreenRouteProp = RouteProp<RootStackParamList, 'MemoDetail'>;
@@ -20,10 +19,6 @@ type Props = {
 const MemoDetailScreen: React.FC<Props> = ({ navigation, route }) => {
   const [memoDetailData, setMemoDetatilData] = useState<MemoData>();
   const { id } = route.params;
-
-  const onPress = () => {
-    navigation.navigate('MemoEdit');
-  };
 
   useEffect(() => {
     const { currentUser } = firebase.auth();
@@ -49,7 +44,10 @@ const MemoDetailScreen: React.FC<Props> = ({ navigation, route }) => {
         iconName="edit-2"
         buttonStyle={{ top: 30, width: 40, height: 40, backgroundColor: '#7ca8eb' }}
         buttonTextStyle={{ fontSize: 20, marginTop: 10 }}
-        onPress={onPress}
+        onPress={() =>
+          memoDetailData &&
+          navigation.navigate('MemoEdit', { id: memoDetailData.id, memoBody: memoDetailData.memoBody })
+        }
       />
     </View>
   );

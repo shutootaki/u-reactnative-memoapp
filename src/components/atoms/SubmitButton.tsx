@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { TNav } from '../../screens/Login';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 type Props = {

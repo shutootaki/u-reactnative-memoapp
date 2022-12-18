@@ -3,6 +3,12 @@ export type RootStackParamList = {
   Login: undefined;
   MemoList: undefined;
   MemoDetail: { id: string };
-  MemoEdit: undefined;
+  MemoEdit: { id: string; memoBody: string };
   MemoCreate: undefined;
+};
+
+export type MemoData = {
+  id: string;
+  memoBody: string;
+  updatedAt?: Date;
 };

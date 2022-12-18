@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { CircleButton } from '../components/atoms/CircleButton';
 import { KeyboardAvoidingView, StyleSheet, View } from 'react-native';
-import CreateMemo from '../components/templates/CreateMemo';
 import firebase from 'firebase';
+import CreateMemo from '../components/templates/CreateMemo';
 import { useNavigation } from '@react-navigation/native';
 
 const MemoCreateScreen: React.FC = () => {

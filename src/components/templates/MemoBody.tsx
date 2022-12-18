@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { MemoData } from '../../screens/MemoListScreen';
+import { MemoData } from '../../types/type';
 
 type Props = {
   memoDetailData: MemoData | undefined;

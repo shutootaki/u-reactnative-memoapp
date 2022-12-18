@@ -5,13 +5,7 @@ import firebase from 'firebase';
 import { MemoList } from '../components/templates/MemoList';
 import { CircleButton } from '../components/atoms/CircleButton';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../type';
-
-export type MemoData = {
-  id: string;
-  memoBody: string;
-  updatedAt: Date;
-};
+import { MemoData, RootStackParamList } from '../types/type';
 
 type MemoListScreenNavigationProp = StackNavigationProp<RootStackParamList, 'MemoList'>;
 type Props = {
