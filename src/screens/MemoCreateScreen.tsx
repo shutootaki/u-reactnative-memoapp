@@ -8,7 +8,6 @@ import { useNavigation } from '@react-navigation/native';
 const MemoCreateScreen: React.FC = () => {
   const db = firebase.firestore();
   const navigation = useNavigation();
-  // const [memoTitle, setMemoTitle] = useState('');
   const [memoBody, setMemoBody] = useState('');
   const { currentUser } = firebase.auth();
 
@@ -17,7 +16,6 @@ const MemoCreateScreen: React.FC = () => {
       db
         .collection(`users/${currentUser.uid}/memos`)
         .add({
-          // memoTitle,
           memoBody,
           updatedAt: new Date()
         })

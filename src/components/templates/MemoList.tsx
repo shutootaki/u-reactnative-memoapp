@@ -1,30 +1,40 @@
 import React, { Suspense } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import Icon2 from 'react-native-vector-icons/Feather';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import { MemoData } from '../../screens/MemoListScreen';
 
 type Props = {
   iconName: string;
+  memos: MemoData[];
 };
 
-export const MemoList: React.FC<Props> = ({ iconName }) => {
+export const MemoList: React.FC<Props> = ({ iconName, memos }) => {
   const navigation = useNavigation();
   const onPress = () => {
     navigation.navigate('MemoDetail');
   };
 
-  return (
-    <Suspense>
+  const renderItem = ({ item }: any) => {
+    return (
       <TouchableOpacity style={styles.memoListItem} onPress={onPress}>
         <View>
-          <Text style={styles.memoListTitle}>買い物リスト</Text>
-          <Text style={styles.memoListItemDate}>2022年12月5日 10:00</Text>
+          <Text style={styles.memoListTitle} numberOfLines={1}>
+            {item.memoBody}
+          </Text>
+          <Text style={styles.memoListItemDate}>{String(item.updatedAt)}</Text>
         </View>
         <TouchableOpacity onPress={() => alert()}>
           <Icon2 style={styles.deleteIcon} name={iconName} size={24} color="gray" />
         </TouchableOpacity>
       </TouchableOpacity>
+    );
+  };
+
+  return (
+    <Suspense>
+      <FlatList data={memos} renderItem={renderItem} keyExtractor={(item) => item.id} />
     </Suspense>
   );
 };
@@ -36,6 +46,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 16,
     paddingHorizontal: 19,
+    maxHeight: 80,
     alignItems: 'center',
     borderBottomWidth: 1,
     borderColor: 'rgba(0,0,0,0.15)'
