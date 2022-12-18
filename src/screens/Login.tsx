@@ -3,12 +3,19 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 import firebase from 'firebase';
 
 import { SubmitButton } from '../components/atoms/SubmitButton';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../type';
 
 export type TNav = {
   navigation: any;
 };
 
-const Login: React.FC<TNav> = ({ navigation }) => {
+type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Login'>;
+type Props = {
+  navigation: LoginScreenNavigationProp;
+};
+
+const Login: React.FC<Props> = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

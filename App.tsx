@@ -9,11 +9,12 @@ import MemoCreateScreen from './src/screens/MemoCreateScreen';
 import Login from './src/screens/Login';
 import SignUp from './src/screens/SignUp';
 import { firebaseConfig } from './env';
+import { RootStackParamList } from './type';
 
 firebase.initializeApp(firebaseConfig);
 require('firebase/firestore');
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
@@ -32,15 +33,15 @@ export default function App() {
         }}
       >
         <Stack.Screen
-          name="SignUp"
-          component={SignUp}
+          name="Login"
+          component={Login}
           options={{
             cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid
           }}
         />
         <Stack.Screen
-          name="Login"
-          component={Login}
+          name="SignUp"
+          component={SignUp}
           options={{
             cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid
           }}

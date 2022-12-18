@@ -4,8 +4,15 @@ import firebase from 'firebase';
 
 import { SubmitButton } from '../components/atoms/SubmitButton';
 import { TNav } from './Login';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../type';
 
-const SignUp: React.FC<TNav> = ({ navigation }) => {
+type ProfileScreenNavigationProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
+type Props = {
+  navigation: ProfileScreenNavigationProp;
+};
+
+const SignUp: React.FC<Props> = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const onPress = () => navigation.navigate('Login');

@@ -3,9 +3,22 @@ import { StyleSheet, View } from 'react-native';
 import MemoTitle from '../components/templates/MemoTitle';
 import { MemoBody } from '../components/templates/MemoBody';
 import { CircleButton } from '../components/atoms/CircleButton';
-import { TNav } from './Login';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-const MemoDetailScreen: React.FC<TNav> = ({ navigation }) => {
+import { RootStackParamList } from '../../type';
+import { RouteProp } from '@react-navigation/native';
+
+type MemoDetailScreenNavigationProp = StackNavigationProp<RootStackParamList, 'MemoDetail'>;
+type MemoDetailScreenRouteProp = RouteProp<RootStackParamList, 'MemoDetail'>;
+type Props = {
+  navigation: MemoDetailScreenNavigationProp;
+  route: MemoDetailScreenRouteProp;
+};
+
+const MemoDetailScreen: React.FC<Props> = ({ navigation, route }) => {
+  const { id } = route.params;
+  console.log(id);
+
   const onPress = () => {
     navigation.navigate('MemoEdit');
   };

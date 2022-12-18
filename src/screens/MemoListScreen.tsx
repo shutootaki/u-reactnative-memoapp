@@ -4,7 +4,8 @@ import firebase from 'firebase';
 
 import { MemoList } from '../components/templates/MemoList';
 import { CircleButton } from '../components/atoms/CircleButton';
-import { TNav } from './Login';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../type';
 
 export type MemoData = {
   id: string;
@@ -12,7 +13,12 @@ export type MemoData = {
   updatedAt: Date;
 };
 
-const MemoListScreen: React.FC<TNav> = ({ navigation }) => {
+type MemoListScreenNavigationProp = StackNavigationProp<RootStackParamList, 'MemoList'>;
+type Props = {
+  navigation: MemoListScreenNavigationProp;
+};
+
+const MemoListScreen: React.FC<Props> = ({ navigation }) => {
   const [memos, setMemos] = useState<MemoData[]>([]);
   const db = firebase.firestore();
   const { currentUser } = firebase.auth();

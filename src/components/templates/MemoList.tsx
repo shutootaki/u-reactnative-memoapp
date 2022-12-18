@@ -12,13 +12,13 @@ type Props = {
 
 export const MemoList: React.FC<Props> = ({ iconName, memos }) => {
   const navigation = useNavigation();
-  const onPress = () => {
-    navigation.navigate('MemoDetail');
+  const onPress = ({ item }: any) => {
+    navigation.navigate('MemoDetail', { id: item.id });
   };
 
   const renderItem = ({ item }: any) => {
     return (
-      <TouchableOpacity style={styles.memoListItem} onPress={onPress}>
+      <TouchableOpacity style={styles.memoListItem} onPress={() => onPress({ item })}>
         <View>
           <Text style={styles.memoListTitle} numberOfLines={1}>
             {item.memoBody}
