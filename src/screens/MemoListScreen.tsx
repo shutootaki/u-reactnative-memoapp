@@ -46,7 +46,7 @@ const MemoListScreen: React.FC<Props> = ({ navigation }) => {
           userMemoList.push({
             id: doc.id,
             memoBody: data.memoBody,
-            updatedAt: data.updatedAt
+            updatedAt: data.updatedAt.toDate()
           });
         });
 

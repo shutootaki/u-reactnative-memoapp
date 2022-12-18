@@ -4,6 +4,7 @@ import Icon2 from 'react-native-vector-icons/Feather';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { MemoData } from '../../screens/MemoListScreen';
+import { dateToString } from '../../utils/convertDate';
 
 type Props = {
   iconName: string;
@@ -23,7 +24,7 @@ export const MemoList: React.FC<Props> = ({ iconName, memos }) => {
           <Text style={styles.memoListTitle} numberOfLines={1}>
             {item.memoBody}
           </Text>
-          <Text style={styles.memoListItemDate}>{String(item.updatedAt)}</Text>
+          <Text style={styles.memoListItemDate}>{dateToString(item.updatedAt)}</Text>
         </View>
         <TouchableOpacity onPress={() => alert()}>
           <Icon2 style={styles.deleteIcon} name={iconName} size={24} color="gray" />
