@@ -1,11 +1,19 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import firebase from 'firebase';
+import { MemoData } from '../../screens/MemoListScreen';
 
-const MemoTitle = () => {
+type Props = {
+  memoDetailData: MemoData | undefined;
+};
+
+const MemoTitle: React.FC<Props> = ({ memoDetailData }) => {
   return (
     <View style={styles.memoHeader}>
-      <Text style={styles.memoTitle}>tmptitle</Text>
-      <Text style={styles.memoDate}>2020202</Text>
+      <Text style={styles.memoTitle} numberOfLines={1}>
+        {memoDetailData && memoDetailData.memoBody}
+      </Text>
+      <Text style={styles.memoDate}>{memoDetailData && String(memoDetailData.updatedAt)}</Text>
     </View>
   );
 };
