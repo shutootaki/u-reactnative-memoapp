@@ -22,7 +22,7 @@ export default function App() {
       <Stack.Navigator
         initialRouteName="Login"
         screenOptions={{
-          headerTitle: 'React Native Memo App',
+          headerTitle: 'Memo App',
           headerStyle: { backgroundColor: '#467FD3' },
           headerTitleStyle: { color: '#ffffff' },
           headerTintColor: '#ffffff',

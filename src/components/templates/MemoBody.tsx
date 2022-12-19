@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   },
   memoText: {
     fontSize: 18,
-    lineHeight: 24
+    lineHeight: 24,
+    paddingBottom: 120
   }
 });

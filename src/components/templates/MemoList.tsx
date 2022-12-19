@@ -30,14 +30,8 @@ export const MemoList: React.FC<Props> = ({ iconName, memos, deleteHandler }) =>
           </Text>
           <Text style={styles.memoListItemDate}>{dateToString(item.updatedAt)}</Text>
         </View>
-        <TouchableOpacity>
-          <Icon2
-            style={styles.deleteIcon}
-            name={iconName}
-            size={24}
-            color="gray"
-            onPress={() => deleteHandler(item.id)}
-          />
+        <TouchableOpacity onPress={() => deleteHandler(item.id)}>
+          <Icon2 style={styles.deleteIcon} name={iconName} size={24} color="gray" />
         </TouchableOpacity>
       </TouchableOpacity>
     );

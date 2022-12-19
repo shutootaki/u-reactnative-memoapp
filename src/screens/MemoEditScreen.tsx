@@ -53,8 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecedfe'
   },
   textEditBody: {
-    paddingVertical: 32,
-    paddingHorizontal: 27,
     textAlignVertical: 'top',
     flex: 1
   }

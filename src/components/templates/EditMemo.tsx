@@ -18,7 +18,9 @@ const styles = StyleSheet.create({
   memoText: {
     fontSize: 18,
     lineHeight: 24,
-    flex: 1
+    flex: 1,
+    paddingVertical: 32,
+    paddingHorizontal: 27
   }
 });
 
