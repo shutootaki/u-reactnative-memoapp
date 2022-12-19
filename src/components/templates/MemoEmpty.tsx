@@ -23,7 +23,8 @@ const emptyStyle = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 80
   },
   inner: {
     fontSize: 24,

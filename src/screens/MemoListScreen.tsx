@@ -44,7 +44,6 @@ const MemoListScreen: React.FC<Props> = ({ navigation }) => {
             updatedAt: data.updatedAt.toDate()
           });
         });
-
         setMemos(userMemoList);
       },
       (error) => Alert.alert(`データを取得できませんでした。${error}`)
@@ -71,10 +70,29 @@ const MemoListScreen: React.FC<Props> = ({ navigation }) => {
       });
   };
 
+  const deleteHandler = async (id: string) => {
+    const ref = currentUser && db.collection(`users/${currentUser.uid}/memos`).doc(id);
+    Alert.alert('メモを削除します', 'よろしいですか？', [
+      {
+        text: 'キャンセル',
+        onPress: () => {}
+      },
+      {
+        text: '削除',
+        style: 'destructive',
+        onPress: () => {
+          ref?.delete().catch((error) => {
+            Alert.alert('Error removing document: ', error);
+          });
+        }
+      }
+    ]);
+  };
+
   return (
     <Suspense fallback={<Loading />}>
       <View style={styles.container}>
-        <MemoList iconName="x" memos={memos} />
+        <MemoList iconName="x" memos={memos} deleteHandler={deleteHandler} />
         <CircleButton iconName="plus" onPress={onPress} />
       </View>
     </Suspense>

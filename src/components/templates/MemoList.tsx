@@ -12,25 +12,32 @@ import { Loading } from '../atoms/Loading';
 type Props = {
   iconName: string;
   memos: MemoData[];
+  deleteHandler: (id: string) => void;
 };
 
-export const MemoList: React.FC<Props> = ({ iconName, memos }) => {
+export const MemoList: React.FC<Props> = ({ iconName, memos, deleteHandler }) => {
   const navigation = useNavigation();
-  const onPress = ({ item }: any) => {
-    navigation.navigate('MemoDetail', { id: item.id });
+  const onPress = (id: string) => {
+    navigation.navigate('MemoDetail', { id });
   };
 
   const renderItem = ({ item }: any) => {
     return (
-      <TouchableOpacity style={styles.memoListItem} onPress={() => onPress({ item })}>
+      <TouchableOpacity style={styles.memoListItem} onPress={() => onPress(item.id)}>
         <View>
           <Text style={styles.memoListTitle} numberOfLines={1}>
             {item.memoBody}
           </Text>
           <Text style={styles.memoListItemDate}>{dateToString(item.updatedAt)}</Text>
         </View>
-        <TouchableOpacity onPress={() => alert()}>
-          <Icon2 style={styles.deleteIcon} name={iconName} size={24} color="gray" />
+        <TouchableOpacity>
+          <Icon2
+            style={styles.deleteIcon}
+            name={iconName}
+            size={24}
+            color="gray"
+            onPress={() => deleteHandler(item.id)}
+          />
         </TouchableOpacity>
       </TouchableOpacity>
     );

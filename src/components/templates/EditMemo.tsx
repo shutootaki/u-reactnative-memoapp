@@ -6,7 +6,7 @@ type Props = {
   setEditMemoBody: React.Dispatch<React.SetStateAction<string>>;
 } & MemoData;
 
-const EditMemo: React.FC<Props> = ({ id, memoBody, setEditMemoBody }) => {
+const EditMemo: React.FC<Props> = ({ memoBody, setEditMemoBody }) => {
   return (
     <TextInput style={styles.memoText} multiline onChangeText={(text) => setEditMemoBody(text)}>
       {memoBody}
