@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import firebase from 'firebase';
 
 import { SubmitButton } from '../components/atoms/SubmitButton';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../types/type';
+import { Loading } from '../components/atoms/Loading';
 
 type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Login'>;
 type Props = {
@@ -44,7 +45,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
   };
 
   return (
-    <View>
+    <Suspense fallback={<Loading />}>
       <View style={styles.innrer}>
         <Text style={styles.title}>Log In</Text>
         <TextInput
@@ -71,7 +72,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </Suspense>
   );
 };
 

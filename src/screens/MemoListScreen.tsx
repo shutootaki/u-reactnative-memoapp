@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
 import firebase from 'firebase';
 
@@ -6,6 +6,7 @@ import { MemoList } from '../components/templates/MemoList';
 import { CircleButton } from '../components/atoms/CircleButton';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { MemoData, RootStackParamList } from '../types/type';
+import { Loading } from '../components/atoms/Loading';
 
 type MemoListScreenNavigationProp = StackNavigationProp<RootStackParamList, 'MemoList'>;
 type Props = {
@@ -71,10 +72,12 @@ const MemoListScreen: React.FC<Props> = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <MemoList iconName="x" memos={memos} />
-      <CircleButton iconName="plus" onPress={onPress} />
-    </View>
+    <Suspense fallback={<Loading />}>
+      <View style={styles.container}>
+        <MemoList iconName="x" memos={memos} />
+        <CircleButton iconName="plus" onPress={onPress} />
+      </View>
+    </Suspense>
   );
 };
 
